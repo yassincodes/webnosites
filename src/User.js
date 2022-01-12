@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import firebase from "./firebase"
 import { useLocation } from 'react-router-dom'
-import {Center, Button, Spinner} from '@chakra-ui/react'
+import {Center} from '@chakra-ui/react'
 import "./SeePage"
 function User() {
     const location = useLocation();

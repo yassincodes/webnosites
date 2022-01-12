@@ -5,13 +5,7 @@ import { Link } from "react-router-dom"
 import "./Home.css"
 function Home() {
     const { signInWithGoogle } = useContext(authContext)
-
-    function sendData() {
-      firebase.database().ref("usernames" + "/" + "someone").set({
-        username: "someone"
-      })
-    }
-
+    
     return (
         <div className="home_page">
             <h1>myresolutions</h1>
@@ -23,7 +17,6 @@ function Home() {
               >
             Continue with google</Link>
             </div>     
-            <button onClick={sendData}>send</button>  
         </div>
     )
 }
