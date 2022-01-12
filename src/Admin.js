@@ -258,7 +258,7 @@ function Admin() {
         </>
   )} else if (dataCenter && dataCenter.length === 1) {
       return (
-        <div>
+        <div className="username_page">
           we are almost done,
           just choose a username :)
           <div>
