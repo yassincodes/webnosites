@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { AuthContextProvider } from "./contexts/authContext";
-import { WidthContextProvider } from "./contexts/widthContext";
+import { WindowNumberContextProvider } from "./contexts/windowNumberContext";
 import { ChakraProvider } from '@chakra-ui/react'
 import {BrowserRouter as Router} from "react-router-dom";
 
@@ -12,9 +12,9 @@ ReactDOM.render(
       <Router>
         <AuthContextProvider>
         <ChakraProvider>
-        <WidthContextProvider>
+        <WindowNumberContextProvider>
           <App />
-        </WidthContextProvider>
+        </WindowNumberContextProvider>
         </ChakraProvider>
         </AuthContextProvider>
       </Router>

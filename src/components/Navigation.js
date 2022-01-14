@@ -1,12 +1,10 @@
 import React, {useContext} from 'react'
-import {widthContext} from "../contexts/widthContext"
+import {windowNumberContext} from "../contexts/windowNumberContext"
+
 function Navigation() {
-    
-    const {windowNumber, setWindowNumber} = useContext(widthContext)
+    const {windowNumber, setWindowNumber} = useContext(windowNumberContext)
     return (
-        <div style={{display:"flex",justifyContent:"space-around", alignItems:"center",
-         width:"100%", height:"6.6vh", background:"white", borderBottom:"1px solid black",
-         marginBottom:"1.5em",background:"#F8F8F8"}}>
+        <div style={{display:"flex",justifyContent:"space-around", alignItems:"center",width:"100%", height:"6.6vh", background:"white", borderBottom:"1px solid black", marginBottom:"1.5em",background:"#F8F8F8"}}>
 
             <div>
                 <p style={windowNumber == 1 ? {cursor:"pointer", color:"black", fontWeight:"bold"} : {cursor:"pointer", color:"gray"}} onClick={() => setWindowNumber(1)}>Resolutions</p>

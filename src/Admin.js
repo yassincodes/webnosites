@@ -6,13 +6,13 @@
 
 import React, {useState, useEffect, useContext} from "react"
 import { authContext } from "./contexts/authContext"
-import { widthContext } from "./contexts/widthContext"
+import { windowNumberContext } from "./contexts/windowNumberContext"
 import firebase from "./firebase"
 import Info from "./components/Info"
 import Navigation from "./components/Navigation"
 import Copy from "./components/Copy"
 import SeePage from "./SeePage"
-import {Center, Flex, useDisclosure,useToast} from '@chakra-ui/react'
+import {useToast} from '@chakra-ui/react'
 import { DeleteIcon } from '@chakra-ui/icons'
 import "./Admin.css"
 import "./SeePage.css"
@@ -23,7 +23,7 @@ function Admin() {
 
     // importing the data from the contexts //
     const { email, displayName, photoURL, uid} = useContext(authContext)
-    const { windowNumber, setWindowNumber } = useContext(widthContext)
+    const { windowNumber } = useContext(windowNumberContext)
 
 
     // getting the width of the screen (980 max widht) //
@@ -218,15 +218,15 @@ function Admin() {
                       <div index={key} style={oneData.text ? {display:"flex", flexDirection:"row", justifyContent:"space-between", width:"80%", marginLeft:"10%",marginBottom:"1vh",marginTop:"1vh",padding:"3vh",borderRadius:"10px",background:"white" } : {display:"flex", flexDirection:"row", justifyContent:"space-between", width:"80%",marginLeft:"10%"}} className="oneData_box_shadow" >
                       {oneData.text ? <div>{oneData.text}</div> : ""}
                         <div>
-                          {oneData.text && <DeleteIcon style={{cursor:"pointer"}} onClick={() => setTextId(oneData.id)}>delete</DeleteIcon>}
+                          {oneData.text && <button onClick={() => setTextId(oneData.id)}>delete</button>}
                         </div>
                     </div>) }) 
                 : (appData && appData.length === 1) 
-                ? <Flex direction="column"> 
+                ? <div style={{display:"flex", flexDirection:"column"}}> 
                     <div style={{ width:"80%",marginLeft:"10%", marginBottom:"1vh", marginTop:"1vh", padding:"3vh",borderRadius:"10px",background:"white"}}>
                       you'll see what users say about you here ( you can edit )
                     </div>
-                  </Flex>
+                  </div>
                 : "something here to tell user its loading"}
                 </div>
                 </div>
@@ -244,10 +244,10 @@ function Admin() {
 
               <div className="see_page" style={(appData && theAppData.length < 8 ) ? {height:"100vh"} : {height:"auto", paddingBottom:"5vh"}}>
               <div>
-                <Center className="see_page_header">
-                    <img name='' style={{borderRadius:"50%", marginBottom:"1.5vh"}} src={appData && appData[0].photoURL} />
-                    {appData && appData[0].displayName}
-                </Center>
+                <div className="see_page_header">
+                    <div><img name='' style={{borderRadius:"50%", marginBottom:"1.5vh"}} src={appData && appData[0].photoURL} /></div>
+                    <div>{appData && appData[0].displayName}</div>
+                </div>
                 {appData && appData.map((oneData) => { return <div className="see_page_oneData" style={oneData.text ? {margin:"1.5vh 6vw", padding:"1.5vh 3vw", background:"lightblue", borderRadius:"10px", color:"white"} : {color:"black"}}>{oneData.text}</div>})}
               </div>
               </div> 
