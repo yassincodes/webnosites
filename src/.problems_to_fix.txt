@@ -1,0 +1,21 @@
+//Getting 404-Page Not Found error, when i reload my react application-
+//which is on firebase
+
+Solved Method> replace this text in Firebase.json
+{
+  "hosting": {
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "/.",
+      "/node_modules/*"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
+-----------------------------------------------------------------
