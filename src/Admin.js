@@ -1,9 +1,3 @@
-// just an idea to fix the appearence on both phone and screen :
-// make a className called "visibiliy" 
-// class will be visible if screen is >980 px and hidden if else
-// we will know the size of the screen using mediaquerry
-
-
 import React, {useState, useEffect, useContext} from "react"
 import { authContext } from "./contexts/authContext"
 import { windowNumberContext } from "./contexts/windowNumberContext"
