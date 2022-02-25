@@ -118,6 +118,8 @@ function Admin() {
           alert("sorry, you can't use that username")
         } else if (theUsername.length > 18) {
           alert("username should not be longer then 18 characters")
+    /* important note: try to make it acceptable only if username matches 
+    a-z0-9_. (I should learn more about regex) */
         } else if (usernames && dataCenter && theUsername.match("^[A-Za-z0-9_]+$")) {
         firebase.database().ref(localStorage.getItem("this_uid") + "/" + "1").set({
           username: theUsername,
