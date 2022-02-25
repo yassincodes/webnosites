@@ -1,0 +1,28 @@
+// storing the data when the user clicks the "join" button //
+    useEffect(() => {
+      if ( email && uid) {
+        firebase.database().ref(localStorage.getItem("this_uid") + "/" + "0").set({
+            uid: uid,
+            displayName: displayName,
+            email: email,
+            photoURL: photoURL
+          })
+        }
+    }, [email, uid])
+
+
+// getting the data that we have stored in the step before //
+    const [dataCenter, setDataCenter] = useState();
+    useEffect(() => {
+      localStorage.getItem("this_uid") 
+      && firebase
+      .database()
+      .ref(localStorage.getItem("this_uid")).on('value', (snapshot) => {
+        const snapshotVal = snapshot.val();
+        const dataCenter = [];
+        for (let id in snapshotVal) {
+          dataCenter.push({ id, ...snapshotVal[id] });
+        }
+        setDataCenter(dataCenter);
+      })
+    }, [localStorage.getItem("this_uid"), uid]);
