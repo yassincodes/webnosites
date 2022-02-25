@@ -49,6 +49,8 @@ function Home() {
     return (
         <div className="home_page">
           <h1 className="home_page_header" >webnosties</h1>
+          <p>I'll share here my idea on the new trend in web development !
+             webnosites and B2I !</p>
           {
             // Question 1 //
           }
