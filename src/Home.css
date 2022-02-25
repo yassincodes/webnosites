@@ -63,12 +63,4 @@
     text-align: left;
 }
 
-.login-with-google-btn {
-    background:rgb(243, 243, 243);
-    -webkit-box-shadow: -2px 0px 18px -4px #000000; 
-    box-shadow: -2px 0px 18px -4px #000000;
-    margin:10px;
-    padding:4px 10px;
-    border-radius: 10px;
-}
   

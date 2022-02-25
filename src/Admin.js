@@ -7,7 +7,6 @@ import Navigation from "./components/Navigation"
 import Copy from "./components/Copy"
 import SeePage from "./SeePage"
 import {useToast} from '@chakra-ui/react'
-import { DeleteIcon } from '@chakra-ui/icons'
 import "./Admin.css"
 import "./SeePage.css"
 import {useWindowWidth} from '@react-hook/window-size'
