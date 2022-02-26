@@ -26,3 +26,34 @@
         setDataCenter(dataCenter);
       })
     }, [localStorage.getItem("this_uid"), uid]);
+
+// deleting & editing info
+// the idea here is to create a button that when you click on it will delete or edit
+// element of the list you have 
+// I divide the code into 3 parts
+
+// 1. make a var called textId
+const [textId, setTextId] = useState(theLength)
+=====> in case of bug change it to theLength
+// 2. the button: you should first create a button in front of every text you have
+    <div>
+        {oneData.text && <button onClick={() => setTextId(oneData.id)}>delete</button>}
+    </div>
+// 3. deleting
+    // when the user clicks on delete we will get the id of the deleted text
+    // and store it textID
+    // example : if the user deletes text number 5 => the textID will be 5
+    // after that the useEffect will trigger 
+    // in the useEffect we will change the text with textID from "something written" to ""
+    useEffect(() => {
+      textId       
+      && dataCenter[1].username === appData[0].username
+      && dataCenter[0].uid === appData[0].uid
+      && firebase
+          .database()
+          .ref(appData[0].username + "/" + textId)
+          .set({
+              id: textId,
+              text: ""
+          })
+      }, [textId])

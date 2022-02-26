@@ -141,7 +141,7 @@ function Admin() {
 
     // this function give as the textID wich equal to the length
     const theLength = appData && appData.length
-    const [textId, setTextId] = useState(theLength)
+    const [textId, setTextId] = useState(0)
 
 
     // this function is responsible of sending the text
@@ -222,9 +222,9 @@ function Admin() {
                       you'll see what users say about you here ( you can edit )
                     </div>
                   </div>
-                : "something here to tell user its loading"}
-                </div>
-                </div>
+                  : "something here to tell user its loading"}
+                  </div>
+              </div>
               
               : (windowNumber === 2) 
               ? <div> here we will show the appearance of the page </div>
